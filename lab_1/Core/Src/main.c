@@ -54,7 +54,14 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void toggle_LED_RED()
+{
+	HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+}
+void toggle_LED_YELLOW()
+{
+	HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
+}
 /* USER CODE END 0 */
 
 /**
@@ -91,8 +98,18 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int time_blink = 2;
+  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
+  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
   while (1)
   {
+	  if (time_blink == 0)
+	  {
+		  toggle_LED_RED();
+		  toggle_LED_YELLOW();
+		  time_blink = 2;
+	  }
+	  time_blink = time_blink - 1;
     /* USER CODE END WHILE */
 	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
