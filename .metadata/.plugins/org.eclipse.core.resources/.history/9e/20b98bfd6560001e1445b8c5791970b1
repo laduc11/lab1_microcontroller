@@ -1,0 +1,17 @@
+/*
+ * traffic_light.c
+ *
+ *  Created on: Oct 1, 2023
+ *      Author: DELL
+ */
+
+void init_light()
+{
+	run_state(red);
+}
+void toggle_green()
+{
+}
+void togle_yellow();
+void toggle_red();
+void run_state(COLOR);

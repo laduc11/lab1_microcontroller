@@ -1,0 +1,30 @@
+/*
+ * global.h
+ *
+ *  Created on: Oct 1, 2023
+ *      Author: DELL
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+#include "main.h"
+
+#define RED 5
+#define YELLOW 2
+#define GREEN 3
+
+typedef enum color
+{
+	red = 1,
+	yellow = 2,
+	green = 3
+} COLOR;
+
+void init_light();
+void toggle_green();
+void togle_yellow();
+void toggle_red();
+void run_state(COLOR);
+
+#endif /* INC_GLOBAL_H_ */
