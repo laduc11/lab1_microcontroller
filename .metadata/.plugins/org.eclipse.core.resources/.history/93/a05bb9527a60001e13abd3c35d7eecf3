@@ -93,30 +93,8 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   init_light();
-  COLOR led_state = red;
-  int count = RED;
   while (1)
   {
-	  if (count <= 0)
-	  {
-		  switch (led_state)
-		  {
-		  case red:
-			  led_state = green;
-			  count = GREEN;
-			  break;
-		  case yellow:
-			  led_state = red;
-			  count = RED;
-			  break;
-		  case green:
-			  led_state = yellow;
-			  count = YELLOW;
-			  break;
-		  }
-	  }
-	  run_state(led_state);
-	  count--;
     /* USER CODE END WHILE */
 	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */

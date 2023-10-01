@@ -113,10 +113,10 @@ int main(void)
 			  led_state = yellow;
 			  count = YELLOW;
 			  break;
+		  default:
+			  break;
 		  }
 	  }
-	  run_state(led_state);
-	  count--;
     /* USER CODE END WHILE */
 	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */

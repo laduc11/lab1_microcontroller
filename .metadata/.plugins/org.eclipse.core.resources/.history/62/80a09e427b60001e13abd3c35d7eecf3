@@ -115,7 +115,6 @@ int main(void)
 			  break;
 		  }
 	  }
-	  run_state(led_state);
 	  count--;
     /* USER CODE END WHILE */
 	  HAL_Delay(1000);
