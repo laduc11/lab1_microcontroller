@@ -9,7 +9,6 @@
 #define INC_GLOBAL_H_
 
 #include "main.h"
-#include "led7Seg.h"
 
 #define RED 5
 #define YELLOW 2

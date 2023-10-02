@@ -1,0 +1,13 @@
+/*
+ * led7Seg.h
+ *
+ *  Created on: Oct 2, 2023
+ *      Author: DELL
+ */
+
+#ifndef INC_LED7SEG_H_
+#define INC_LED7SEG_H_
+
+#inlcude "main.h"
+
+#endif /* INC_LED7SEG_H_ */

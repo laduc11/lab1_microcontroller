@@ -1,0 +1,24 @@
+/*
+ * led7Seg.c
+ *
+ *  Created on: Oct 2, 2023
+ *      Author: DELL
+ */
+
+#include "led7Seg.h"
+
+void display7SEG(uint16_t num, LED7SEG led)
+{
+	switch (num)
+	{
+	case 0:
+		on_red(led.A_Port, led.A_Pin);
+		on_red(led.B_Port, led.B_Pin);
+		on_red(led.C_Port, led.C_Pin);
+		on_red(led.D_Port, led.D_Pin);
+		on_red(led.E_Port, led.E_Pin);
+		on_red(led.F_Port, led.F_Pin);
+		off_red(led.G_Port, led.G_Pin);
+		break;
+	}
+}
