@@ -32,7 +32,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "global.h"
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -58,18 +58,20 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define H_RED_Pin GPIO_PIN_3
-#define H_RED_GPIO_Port GPIOA
-#define H_YELLOW_Pin GPIO_PIN_4
-#define H_YELLOW_GPIO_Port GPIOA
-#define H_GREEN_Pin GPIO_PIN_5
-#define H_GREEN_GPIO_Port GPIOA
-#define V_RED_Pin GPIO_PIN_0
-#define V_RED_GPIO_Port GPIOB
-#define V_YELLOW_Pin GPIO_PIN_1
-#define V_YELLOW_GPIO_Port GPIOB
-#define V_GREEN_Pin GPIO_PIN_2
-#define V_GREEN_GPIO_Port GPIOB
+#define A_Pin GPIO_PIN_1
+#define A_GPIO_Port GPIOA
+#define B_Pin GPIO_PIN_2
+#define B_GPIO_Port GPIOA
+#define C_Pin GPIO_PIN_3
+#define C_GPIO_Port GPIOA
+#define D_Pin GPIO_PIN_4
+#define D_GPIO_Port GPIOA
+#define E_Pin GPIO_PIN_5
+#define E_GPIO_Port GPIOA
+#define F_Pin GPIO_PIN_6
+#define F_GPIO_Port GPIOA
+#define G_Pin GPIO_PIN_7
+#define G_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
