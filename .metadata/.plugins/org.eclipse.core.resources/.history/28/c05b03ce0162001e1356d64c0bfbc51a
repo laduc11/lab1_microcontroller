@@ -91,29 +91,17 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int sec = 0, min = 0, hour = 0;
-  clearAllClock();
+  setAllClock();
+  int count = 0;
   while (1)
   {
-	  if (sec == 60)
+	  if (count >= 12)
 	  {
-		  sec = 0;
-		  min++;
+		  count = 0;
 	  }
-	  if (min == 60)
-	  {
-		  min = 0;
-		  hour++;
-	  }
-	  if (hour == 24)
-	  {
-		  hour = 0;
-	  }
-	  clearAllClock();
-	  setNumberOnClock(sec/5);
-	  setNumberOnClock(min/5);
-	  setNumberOnClock(hour);
-	  sec++;
+	  setAllClock();
+	  clearNumberOnClock(count);
+	  count++;
     /* USER CODE END WHILE */
 	  HAL_Delay(100);
     /* USER CODE BEGIN 3 */
