@@ -99,7 +99,6 @@ int main(void)
 	  {
 		  count = 0;
 	  }
-	  clearAllClock();
 	  setNumberOnClock(count);
 	  count++;
     /* USER CODE END WHILE */

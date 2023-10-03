@@ -2399,17 +2399,17 @@ LOAD e:/stm32/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.e
  .debug_macro   0x00000000000153ff      0x1ed ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
  .debug_macro   0x00000000000155ec      0x194 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
 
-.debug_line     0x0000000000000000     0x4c27
+.debug_line     0x0000000000000000     0x4c25
  .debug_line    0x0000000000000000      0x67b ./Core/Src/clock.o
- .debug_line    0x000000000000067b      0x6ea ./Core/Src/main.o
- .debug_line    0x0000000000000d65      0x64d ./Core/Src/stm32f1xx_hal_msp.o
- .debug_line    0x00000000000013b2      0x70e ./Core/Src/stm32f1xx_it.o
- .debug_line    0x0000000000001ac0      0x6be ./Core/Src/system_stm32f1xx.o
- .debug_line    0x000000000000217e       0x86 ./Core/Startup/startup_stm32f103c6tx.o
- .debug_line    0x0000000000002204      0x8eb ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
- .debug_line    0x0000000000002aef      0xad3 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
- .debug_line    0x00000000000035c2      0x96e ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
- .debug_line    0x0000000000003f30      0xcf7 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_line    0x000000000000067b      0x6e8 ./Core/Src/main.o
+ .debug_line    0x0000000000000d63      0x64d ./Core/Src/stm32f1xx_hal_msp.o
+ .debug_line    0x00000000000013b0      0x70e ./Core/Src/stm32f1xx_it.o
+ .debug_line    0x0000000000001abe      0x6be ./Core/Src/system_stm32f1xx.o
+ .debug_line    0x000000000000217c       0x86 ./Core/Startup/startup_stm32f103c6tx.o
+ .debug_line    0x0000000000002202      0x8eb ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+ .debug_line    0x0000000000002aed      0xad3 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_line    0x00000000000035c0      0x96e ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_line    0x0000000000003f2e      0xcf7 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
 
 .debug_str      0x0000000000000000    0x79992
  .debug_str     0x0000000000000000    0x78834 ./Core/Src/clock.o

@@ -98,8 +98,8 @@ int main(void)
 	  if (count >= 12)
 	  {
 		  count = 0;
+		  clearAllClock();
 	  }
-	  clearAllClock();
 	  setNumberOnClock(count);
 	  count++;
     /* USER CODE END WHILE */

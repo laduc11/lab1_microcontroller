@@ -37,11 +37,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00015780  00000000  00000000  00024948  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00004c27  00000000  00000000  0003a0c8  2**0
+ 17 .debug_line   00004c25  00000000  00000000  0003a0c8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00079992  00000000  00000000  0003ecef  2**0
+ 18 .debug_str    00079992  00000000  00000000  0003eced  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000b8681  2**0
+ 19 .comment      00000053  00000000  00000000  000b867f  2**0
                   CONTENTS, READONLY
  20 .debug_frame  00000d80  00000000  00000000  000b86d4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -332,14 +332,14 @@ int main(void)
 	  if (count >= 12)
  80002f2:	687b      	ldr	r3, [r7, #4]
  80002f4:	2b0b      	cmp	r3, #11
- 80002f6:	dd03      	ble.n	8000300 <main+0x28>
+ 80002f6:	dd01      	ble.n	80002fc <main+0x24>
 	  {
 		  count = 0;
  80002f8:	2300      	movs	r3, #0
  80002fa:	607b      	str	r3, [r7, #4]
-		  clearAllClock();
- 80002fc:	f7ff ff26 	bl	800014c <clearAllClock>
 	  }
+	  clearAllClock();
+ 80002fc:	f7ff ff26 	bl	800014c <clearAllClock>
 	  setNumberOnClock(count);
  8000300:	6878      	ldr	r0, [r7, #4]
  8000302:	f7ff ff6d 	bl	80001e0 <setNumberOnClock>
