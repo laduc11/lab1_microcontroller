@@ -13,6 +13,5 @@
 void clearAllClock();
 void setNumberOnClock(int num);
 void clearNumberOnClock(int num);
-void setAllClock();
 
 #endif /* INC_GLOBAL_H_ */

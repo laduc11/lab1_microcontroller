@@ -99,8 +99,8 @@ int main(void)
 	  {
 		  count = 0;
 	  }
-	  setAllClock();
-	  clearNumberOnClock(count);
+	  clearAllClock();
+	  setNumberOnClock(count);
 	  count++;
     /* USER CODE END WHILE */
 	  HAL_Delay(100);

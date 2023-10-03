@@ -1,2 +1,4 @@
 clock.c:10:6:clearAllClock	8	static
-clock.c:25:6:setNumberOnClock	16	static
+clock.c:25:6:setAllClock	8	static
+clock.c:40:6:setNumberOnClock	16	static
+clock.c:85:6:clearNumberOnClock	16	static

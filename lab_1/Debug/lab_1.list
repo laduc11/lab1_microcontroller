@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  0002000c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00003224  00000000  00000000  00020035  2**0
+ 12 .debug_info   0000325c  00000000  00000000  00020035  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00000f91  00000000  00000000  00023259  2**0
+ 13 .debug_abbrev 00000f91  00000000  00000000  00023291  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 000003f8  00000000  00000000  000241f0  2**3
+ 14 .debug_aranges 00000408  00000000  00000000  00024228  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00000360  00000000  00000000  000245e8  2**3
+ 15 .debug_ranges 00000370  00000000  00000000  00024630  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00015780  00000000  00000000  00024948  2**0
+ 16 .debug_macro  00015780  00000000  00000000  000249a0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00004c25  00000000  00000000  0003a0c8  2**0
+ 17 .debug_line   00004c7a  00000000  00000000  0003a120  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00079992  00000000  00000000  0003eced  2**0
+ 18 .debug_str    000799b1  00000000  00000000  0003ed9a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000b867f  2**0
+ 19 .comment      00000053  00000000  00000000  000b874b  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00000d80  00000000  00000000  000b86d4  2**2
+ 20 .debug_frame  00000dc0  00000000  00000000  000b87a0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -76,82 +76,86 @@ Disassembly of section .text:
  8000144:	20000010 	.word	0x20000010
  8000148:	08001314 	.word	0x08001314
 
-0800014c <clearAllClock>:
- */
-
-#include "global.h"
-
-void clearAllClock()
+0800014c <setAllClock>:
+	HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, SET);
+	HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, SET);
+	HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, SET);
+}
+void setAllClock()
 {
  800014c:	b580      	push	{r7, lr}
  800014e:	af00      	add	r7, sp, #0
-	HAL_GPIO_WritePin(LED_0_GPIO_Port, LED_0_Pin, SET);
- 8000150:	2201      	movs	r2, #1
+	HAL_GPIO_WritePin(LED_0_GPIO_Port, LED_0_Pin, RESET);
+ 8000150:	2200      	movs	r2, #0
  8000152:	2110      	movs	r1, #16
- 8000154:	4821      	ldr	r0, [pc, #132]	; (80001dc <clearAllClock+0x90>)
+ 8000154:	4821      	ldr	r0, [pc, #132]	; (80001dc <setAllClock+0x90>)
  8000156:	f000 fcbd 	bl	8000ad4 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, SET);
- 800015a:	2201      	movs	r2, #1
+	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, RESET);
+ 800015a:	2200      	movs	r2, #0
  800015c:	2120      	movs	r1, #32
- 800015e:	481f      	ldr	r0, [pc, #124]	; (80001dc <clearAllClock+0x90>)
+ 800015e:	481f      	ldr	r0, [pc, #124]	; (80001dc <setAllClock+0x90>)
  8000160:	f000 fcb8 	bl	8000ad4 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, SET);
- 8000164:	2201      	movs	r2, #1
+	HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, RESET);
+ 8000164:	2200      	movs	r2, #0
  8000166:	2140      	movs	r1, #64	; 0x40
- 8000168:	481c      	ldr	r0, [pc, #112]	; (80001dc <clearAllClock+0x90>)
+ 8000168:	481c      	ldr	r0, [pc, #112]	; (80001dc <setAllClock+0x90>)
  800016a:	f000 fcb3 	bl	8000ad4 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, SET);
- 800016e:	2201      	movs	r2, #1
+	HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, RESET);
+ 800016e:	2200      	movs	r2, #0
  8000170:	2180      	movs	r1, #128	; 0x80
- 8000172:	481a      	ldr	r0, [pc, #104]	; (80001dc <clearAllClock+0x90>)
+ 8000172:	481a      	ldr	r0, [pc, #104]	; (80001dc <setAllClock+0x90>)
  8000174:	f000 fcae 	bl	8000ad4 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, SET);
- 8000178:	2201      	movs	r2, #1
+	HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, RESET);
+ 8000178:	2200      	movs	r2, #0
  800017a:	f44f 7180 	mov.w	r1, #256	; 0x100
- 800017e:	4817      	ldr	r0, [pc, #92]	; (80001dc <clearAllClock+0x90>)
+ 800017e:	4817      	ldr	r0, [pc, #92]	; (80001dc <setAllClock+0x90>)
  8000180:	f000 fca8 	bl	8000ad4 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, SET);
- 8000184:	2201      	movs	r2, #1
+	HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, RESET);
+ 8000184:	2200      	movs	r2, #0
  8000186:	f44f 7100 	mov.w	r1, #512	; 0x200
- 800018a:	4814      	ldr	r0, [pc, #80]	; (80001dc <clearAllClock+0x90>)
+ 800018a:	4814      	ldr	r0, [pc, #80]	; (80001dc <setAllClock+0x90>)
  800018c:	f000 fca2 	bl	8000ad4 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, SET);
- 8000190:	2201      	movs	r2, #1
+	HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, RESET);
+ 8000190:	2200      	movs	r2, #0
  8000192:	f44f 6180 	mov.w	r1, #1024	; 0x400
- 8000196:	4811      	ldr	r0, [pc, #68]	; (80001dc <clearAllClock+0x90>)
+ 8000196:	4811      	ldr	r0, [pc, #68]	; (80001dc <setAllClock+0x90>)
  8000198:	f000 fc9c 	bl	8000ad4 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, SET);
- 800019c:	2201      	movs	r2, #1
+	HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, RESET);
+ 800019c:	2200      	movs	r2, #0
  800019e:	f44f 6100 	mov.w	r1, #2048	; 0x800
- 80001a2:	480e      	ldr	r0, [pc, #56]	; (80001dc <clearAllClock+0x90>)
+ 80001a2:	480e      	ldr	r0, [pc, #56]	; (80001dc <setAllClock+0x90>)
  80001a4:	f000 fc96 	bl	8000ad4 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, SET);
- 80001a8:	2201      	movs	r2, #1
+	HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, RESET);
+ 80001a8:	2200      	movs	r2, #0
  80001aa:	f44f 5180 	mov.w	r1, #4096	; 0x1000
- 80001ae:	480b      	ldr	r0, [pc, #44]	; (80001dc <clearAllClock+0x90>)
+ 80001ae:	480b      	ldr	r0, [pc, #44]	; (80001dc <setAllClock+0x90>)
  80001b0:	f000 fc90 	bl	8000ad4 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, SET);
- 80001b4:	2201      	movs	r2, #1
+	HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, RESET);
+ 80001b4:	2200      	movs	r2, #0
  80001b6:	f44f 5100 	mov.w	r1, #8192	; 0x2000
- 80001ba:	4808      	ldr	r0, [pc, #32]	; (80001dc <clearAllClock+0x90>)
+ 80001ba:	4808      	ldr	r0, [pc, #32]	; (80001dc <setAllClock+0x90>)
  80001bc:	f000 fc8a 	bl	8000ad4 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, SET);
- 80001c0:	2201      	movs	r2, #1
+	HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, RESET);
+ 80001c0:	2200      	movs	r2, #0
  80001c2:	f44f 4180 	mov.w	r1, #16384	; 0x4000
- 80001c6:	4805      	ldr	r0, [pc, #20]	; (80001dc <clearAllClock+0x90>)
+ 80001c6:	4805      	ldr	r0, [pc, #20]	; (80001dc <setAllClock+0x90>)
  80001c8:	f000 fc84 	bl	8000ad4 <HAL_GPIO_WritePin>
-	HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, SET);
- 80001cc:	2201      	movs	r2, #1
+	HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, RESET);
+ 80001cc:	2200      	movs	r2, #0
  80001ce:	f44f 4100 	mov.w	r1, #32768	; 0x8000
- 80001d2:	4802      	ldr	r0, [pc, #8]	; (80001dc <clearAllClock+0x90>)
+ 80001d2:	4802      	ldr	r0, [pc, #8]	; (80001dc <setAllClock+0x90>)
  80001d4:	f000 fc7e 	bl	8000ad4 <HAL_GPIO_WritePin>
 }
  80001d8:	bf00      	nop
  80001da:	bd80      	pop	{r7, pc}
  80001dc:	40010800 	.word	0x40010800
 
-080001e0 <setNumberOnClock>:
-void setNumberOnClock(int num)
+080001e0 <clearNumberOnClock>:
+		clearAllClock();
+		break;
+	}
+}
+void clearNumberOnClock(int num)
 {
  80001e0:	b580      	push	{r7, lr}
  80001e2:	b082      	sub	sp, #8
@@ -159,8 +163,8 @@ void setNumberOnClock(int num)
  80001e6:	6078      	str	r0, [r7, #4]
  80001e8:	687b      	ldr	r3, [r7, #4]
  80001ea:	2b0b      	cmp	r3, #11
- 80001ec:	d86a      	bhi.n	80002c4 <setNumberOnClock+0xe4>
- 80001ee:	a201      	add	r2, pc, #4	; (adr r2, 80001f4 <setNumberOnClock+0x14>)
+ 80001ec:	d86a      	bhi.n	80002c4 <clearNumberOnClock+0xe4>
+ 80001ee:	a201      	add	r2, pc, #4	; (adr r2, 80001f4 <clearNumberOnClock+0x14>)
  80001f0:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
  80001f4:	08000225 	.word	0x08000225
  80001f8:	08000231 	.word	0x08000231
@@ -177,104 +181,104 @@ void setNumberOnClock(int num)
 	switch (num)
 	{
 	case 0:
-		HAL_GPIO_WritePin(LED_0_GPIO_Port, LED_0_Pin, RESET);
- 8000224:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_0_GPIO_Port, LED_0_Pin, SET);
+ 8000224:	2201      	movs	r2, #1
  8000226:	2110      	movs	r1, #16
- 8000228:	482a      	ldr	r0, [pc, #168]	; (80002d4 <setNumberOnClock+0xf4>)
+ 8000228:	482a      	ldr	r0, [pc, #168]	; (80002d4 <clearNumberOnClock+0xf4>)
  800022a:	f000 fc53 	bl	8000ad4 <HAL_GPIO_WritePin>
 		break;
- 800022e:	e04c      	b.n	80002ca <setNumberOnClock+0xea>
+ 800022e:	e04c      	b.n	80002ca <clearNumberOnClock+0xea>
 	case 1:
-		HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, RESET);
- 8000230:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, SET);
+ 8000230:	2201      	movs	r2, #1
  8000232:	2120      	movs	r1, #32
- 8000234:	4827      	ldr	r0, [pc, #156]	; (80002d4 <setNumberOnClock+0xf4>)
+ 8000234:	4827      	ldr	r0, [pc, #156]	; (80002d4 <clearNumberOnClock+0xf4>)
  8000236:	f000 fc4d 	bl	8000ad4 <HAL_GPIO_WritePin>
 		break;
- 800023a:	e046      	b.n	80002ca <setNumberOnClock+0xea>
+ 800023a:	e046      	b.n	80002ca <clearNumberOnClock+0xea>
 	case 2:
-		HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, RESET);
- 800023c:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, SET);
+ 800023c:	2201      	movs	r2, #1
  800023e:	2140      	movs	r1, #64	; 0x40
- 8000240:	4824      	ldr	r0, [pc, #144]	; (80002d4 <setNumberOnClock+0xf4>)
+ 8000240:	4824      	ldr	r0, [pc, #144]	; (80002d4 <clearNumberOnClock+0xf4>)
  8000242:	f000 fc47 	bl	8000ad4 <HAL_GPIO_WritePin>
 		break;
- 8000246:	e040      	b.n	80002ca <setNumberOnClock+0xea>
+ 8000246:	e040      	b.n	80002ca <clearNumberOnClock+0xea>
 	case 3:
-		HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, RESET);
- 8000248:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, SET);
+ 8000248:	2201      	movs	r2, #1
  800024a:	2180      	movs	r1, #128	; 0x80
- 800024c:	4821      	ldr	r0, [pc, #132]	; (80002d4 <setNumberOnClock+0xf4>)
+ 800024c:	4821      	ldr	r0, [pc, #132]	; (80002d4 <clearNumberOnClock+0xf4>)
  800024e:	f000 fc41 	bl	8000ad4 <HAL_GPIO_WritePin>
 		break;
- 8000252:	e03a      	b.n	80002ca <setNumberOnClock+0xea>
+ 8000252:	e03a      	b.n	80002ca <clearNumberOnClock+0xea>
 	case 4:
-		HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, RESET);
- 8000254:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, SET);
+ 8000254:	2201      	movs	r2, #1
  8000256:	f44f 7180 	mov.w	r1, #256	; 0x100
- 800025a:	481e      	ldr	r0, [pc, #120]	; (80002d4 <setNumberOnClock+0xf4>)
+ 800025a:	481e      	ldr	r0, [pc, #120]	; (80002d4 <clearNumberOnClock+0xf4>)
  800025c:	f000 fc3a 	bl	8000ad4 <HAL_GPIO_WritePin>
 		break;
- 8000260:	e033      	b.n	80002ca <setNumberOnClock+0xea>
+ 8000260:	e033      	b.n	80002ca <clearNumberOnClock+0xea>
 	case 5:
-		HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, RESET);
- 8000262:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, SET);
+ 8000262:	2201      	movs	r2, #1
  8000264:	f44f 7100 	mov.w	r1, #512	; 0x200
- 8000268:	481a      	ldr	r0, [pc, #104]	; (80002d4 <setNumberOnClock+0xf4>)
+ 8000268:	481a      	ldr	r0, [pc, #104]	; (80002d4 <clearNumberOnClock+0xf4>)
  800026a:	f000 fc33 	bl	8000ad4 <HAL_GPIO_WritePin>
 		break;
- 800026e:	e02c      	b.n	80002ca <setNumberOnClock+0xea>
+ 800026e:	e02c      	b.n	80002ca <clearNumberOnClock+0xea>
 	case 6:
-		HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, RESET);
- 8000270:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, SET);
+ 8000270:	2201      	movs	r2, #1
  8000272:	f44f 6180 	mov.w	r1, #1024	; 0x400
- 8000276:	4817      	ldr	r0, [pc, #92]	; (80002d4 <setNumberOnClock+0xf4>)
+ 8000276:	4817      	ldr	r0, [pc, #92]	; (80002d4 <clearNumberOnClock+0xf4>)
  8000278:	f000 fc2c 	bl	8000ad4 <HAL_GPIO_WritePin>
 		break;
- 800027c:	e025      	b.n	80002ca <setNumberOnClock+0xea>
+ 800027c:	e025      	b.n	80002ca <clearNumberOnClock+0xea>
 	case 7:
-		HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, RESET);
- 800027e:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, SET);
+ 800027e:	2201      	movs	r2, #1
  8000280:	f44f 6100 	mov.w	r1, #2048	; 0x800
- 8000284:	4813      	ldr	r0, [pc, #76]	; (80002d4 <setNumberOnClock+0xf4>)
+ 8000284:	4813      	ldr	r0, [pc, #76]	; (80002d4 <clearNumberOnClock+0xf4>)
  8000286:	f000 fc25 	bl	8000ad4 <HAL_GPIO_WritePin>
 		break;
- 800028a:	e01e      	b.n	80002ca <setNumberOnClock+0xea>
+ 800028a:	e01e      	b.n	80002ca <clearNumberOnClock+0xea>
 	case 8:
-		HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, RESET);
- 800028c:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, SET);
+ 800028c:	2201      	movs	r2, #1
  800028e:	f44f 5180 	mov.w	r1, #4096	; 0x1000
- 8000292:	4810      	ldr	r0, [pc, #64]	; (80002d4 <setNumberOnClock+0xf4>)
+ 8000292:	4810      	ldr	r0, [pc, #64]	; (80002d4 <clearNumberOnClock+0xf4>)
  8000294:	f000 fc1e 	bl	8000ad4 <HAL_GPIO_WritePin>
 		break;
- 8000298:	e017      	b.n	80002ca <setNumberOnClock+0xea>
+ 8000298:	e017      	b.n	80002ca <clearNumberOnClock+0xea>
 	case 9:
-		HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, RESET);
- 800029a:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, SET);
+ 800029a:	2201      	movs	r2, #1
  800029c:	f44f 5100 	mov.w	r1, #8192	; 0x2000
- 80002a0:	480c      	ldr	r0, [pc, #48]	; (80002d4 <setNumberOnClock+0xf4>)
+ 80002a0:	480c      	ldr	r0, [pc, #48]	; (80002d4 <clearNumberOnClock+0xf4>)
  80002a2:	f000 fc17 	bl	8000ad4 <HAL_GPIO_WritePin>
 		break;
- 80002a6:	e010      	b.n	80002ca <setNumberOnClock+0xea>
+ 80002a6:	e010      	b.n	80002ca <clearNumberOnClock+0xea>
 	case 10:
-		HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, RESET);
- 80002a8:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, SET);
+ 80002a8:	2201      	movs	r2, #1
  80002aa:	f44f 4180 	mov.w	r1, #16384	; 0x4000
- 80002ae:	4809      	ldr	r0, [pc, #36]	; (80002d4 <setNumberOnClock+0xf4>)
+ 80002ae:	4809      	ldr	r0, [pc, #36]	; (80002d4 <clearNumberOnClock+0xf4>)
  80002b0:	f000 fc10 	bl	8000ad4 <HAL_GPIO_WritePin>
 		break;
- 80002b4:	e009      	b.n	80002ca <setNumberOnClock+0xea>
+ 80002b4:	e009      	b.n	80002ca <clearNumberOnClock+0xea>
 	case 11:
-		HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, RESET);
- 80002b6:	2200      	movs	r2, #0
+		HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, SET);
+ 80002b6:	2201      	movs	r2, #1
  80002b8:	f44f 4100 	mov.w	r1, #32768	; 0x8000
- 80002bc:	4805      	ldr	r0, [pc, #20]	; (80002d4 <setNumberOnClock+0xf4>)
+ 80002bc:	4805      	ldr	r0, [pc, #20]	; (80002d4 <clearNumberOnClock+0xf4>)
  80002be:	f000 fc09 	bl	8000ad4 <HAL_GPIO_WritePin>
 		break;
- 80002c2:	e002      	b.n	80002ca <setNumberOnClock+0xea>
+ 80002c2:	e002      	b.n	80002ca <clearNumberOnClock+0xea>
 	default:
-		clearAllClock();
- 80002c4:	f7ff ff42 	bl	800014c <clearAllClock>
+		setAllClock();
+ 80002c4:	f7ff ff42 	bl	800014c <setAllClock>
 		break;
  80002c8:	bf00      	nop
 	}
@@ -322,8 +326,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  clearAllClock();
- 80002ea:	f7ff ff2f 	bl	800014c <clearAllClock>
+  setAllClock();
+ 80002ea:	f7ff ff2f 	bl	800014c <setAllClock>
   int count = 0;
  80002ee:	2300      	movs	r3, #0
  80002f0:	607b      	str	r3, [r7, #4]
@@ -338,11 +342,11 @@ int main(void)
  80002f8:	2300      	movs	r3, #0
  80002fa:	607b      	str	r3, [r7, #4]
 	  }
-	  clearAllClock();
- 80002fc:	f7ff ff26 	bl	800014c <clearAllClock>
-	  setNumberOnClock(count);
+	  setAllClock();
+ 80002fc:	f7ff ff26 	bl	800014c <setAllClock>
+	  clearNumberOnClock(count);
  8000300:	6878      	ldr	r0, [r7, #4]
- 8000302:	f7ff ff6d 	bl	80001e0 <setNumberOnClock>
+ 8000302:	f7ff ff6d 	bl	80001e0 <clearNumberOnClock>
 	  count++;
  8000306:	687b      	ldr	r3, [r7, #4]
  8000308:	3301      	adds	r3, #1
