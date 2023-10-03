@@ -1,0 +1,12 @@
+/*
+ * clock.c
+ *
+ *  Created on: Oct 3, 2023
+ *      Author: DELL
+ */
+
+#include "global.h"
+
+void clearAllClock();
+void setNumberOnClock(int num);
+void clearNumberOnClock(int num);
