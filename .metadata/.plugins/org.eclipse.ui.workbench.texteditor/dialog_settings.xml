@@ -9,10 +9,12 @@
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
 			<item value="RESET"/>
+			<item value="SET"/>
 			<item value="on"/>
 		</list>
 		<list key="replacehistory">
 			<item value="SET"/>
+			<item value="RESET"/>
 			<item value="off"/>
 		</list>
 	</section>
